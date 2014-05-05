@@ -1,0 +1,15 @@
+To Compile mex file :
+
+For Windows:
+
+mex  batchTrain.cpp clusterBase.cpp clusterModule.cpp cslForest.cpp cslTree.cpp dataUtil.cpp gmm.cpp kmeans.cpp qNode.cpp tNode.cpp   COMPFLAGS="/openmp $COMPFLAGS"
+
+The flags are needed at the end to enable parallel processing.
+
+
+For Unix:
+
+mex  batchTrain.cpp clusterBase.cpp clusterModule.cpp cslForest.cpp cslTree.cpp dataUtil.cpp gmm.cpp kmeans.cpp qNode.cpp tNode.cpp   COMPFLAGS="/openmp $COMPFLAGS"CFLAGS="\$CFLAGS -fopenmp" LDFLAGS="\$LDFLAGS -fopenmp"
+
+
+If you want to see how the code works internally, you can compile mex using Visual studio and then link it to matlab. (Let me know if any errors with this method)
